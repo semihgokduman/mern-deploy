@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 
+// const url = 'http://localhost:4000'
+const url = 'https://mern-deploy-backend-nndy.onrender.com'
+
 function App() {
-  const [message, setMessage] = useState("");
+    const [message, setMessage] = useState("");
 
   // Fetching message from backend on mount
   useEffect(() => {
-    fetch("https://mern-deploy-backend-nndy.onrender.com")
+    fetch(url)
             .then((res) => res.json())
             .then((data) => setMessage(data.message));
   }, []);
